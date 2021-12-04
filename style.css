@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #43B688;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.hamburger {
+	animation: Out 1s forwards;
+}
+
+#hamburger:hover {
+	cursor: pointer;
+}
+
+.line1, .line2, .line3 {
+	border: 1px solid #fff;
+	width: 80px;
+	height: 8px;
+	border-radius: 3px;
+	background-color: #fff;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	margin-bottom: 10px;
+}
+
+.nothing {
+	animation: Out 1s forwards;
+}
+
+.open .line1 {
+	animation: line1Move 1s forwards;
+}
+
+.open .line2 {
+	animation: line2Move 1s forwards;
+}
+
+.open .line3 {
+	animation: line3Move 1s forwards;
+}
+
+@keyframes line1Move {
+	100% {
+		transform: translate(0px, 27px) rotate(-45deg);
+	}
+}
+
+@keyframes line2Move {
+	50% {
+		transform: scale(0.5);
+	}
+	100% {
+		opacity: 0;
+		display: none;
+	}
+}
+
+@keyframes line3Move {
+	100% {
+		transform: translate(0px, -13px) rotate(45deg);
+	}
+}
+
+@keyframes Out {
+	100% {
+		transform: scale(1.2);
+		transition: 0.15 ease-in-out;
+	}
+}
